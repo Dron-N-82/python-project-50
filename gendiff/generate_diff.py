@@ -1,3 +1,4 @@
+#!usr/bin/env python3
 import argparse
 import json
 
@@ -16,17 +17,40 @@ def parse_argumet():
     return {
         'first_file': args.first_file,
         'second_file': args.second_file,
-        'format': args.format
-    }
+        }
 # Читаем и получаем данные из *.json файла
 def get_data_from_file(file_json):
     with open(file_json) as handle_file:
         data = json.load(handle_file)
     return data
 
+def generate_diff(fail1_path, fail2_path):
+    fail1 = get_data_from_file(fail1_path)
+    fail2 = get_data_from_file(fail2_path)
+    keys = sorted(set(fail1.keys()).union(fail2.keys()))
+    elem = [f'gendiff {fail1_path} {fail2_path}', '{']
+    
+    for key in keys:
+        value1 = fail1.get(key)
+        value2 = fail2.get(key)
+    
+        if value1 == value2:
+            elem.append(f'    {key}: {value1}')
+
+        if value1 != value2:
+            if value1 is not None:
+                elem.append(f'  - {key}: {value1}')  # Значение из первого файла
+            if value2 is not None:
+                elem.append(f'  + {key}: {value2}')  # Значение из второго файла
+
+    elem.append('}')
+    return '\n'.join(elem)
+
 
 def maindiff():
     arg_data = parse_argumet()
-    first = get_data_from_file(arg_data['first_file'])
-    second = get_data_from_file(arg_data['second_file'])
-    
+    result = generate_diff(
+        arg_data['first_file'],
+        arg_data['second_file'],
+        )
+    print(result)

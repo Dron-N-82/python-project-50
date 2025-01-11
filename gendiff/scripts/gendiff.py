@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-import gendiff.generate_diff
+import gendiff.generate_diff as gen_diff
 
 def main():
-    gendiff.generate_diff.maindiff()
+    gen_diff.maindiff()
     
     
 if __name__ == '__main__':
