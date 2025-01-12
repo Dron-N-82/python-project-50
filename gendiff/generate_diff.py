@@ -2,6 +2,7 @@
 import argparse
 import json
 
+
 def parse_argumet():
     # Создаем парсер аргументов
     parser = argparse.ArgumentParser(
@@ -18,21 +19,24 @@ def parse_argumet():
         'first_file': args.first_file,
         'second_file': args.second_file,
         }
+
+
 # Читаем и получаем данные из *.json файла
 def get_data_from_file(file_json):
     with open(file_json) as handle_file:
         data = json.load(handle_file)
     return data
 
-def generate_diff(fail1_path, fail2_path):
-    fail1 = get_data_from_file(fail1_path)
-    fail2 = get_data_from_file(fail2_path)
-    keys = sorted(set(fail1.keys()).union(fail2.keys()))
-    elem = [f'gendiff {fail1_path} {fail2_path}', '{']
+
+def generate_diff(file1_path, file2_path):
+    file1 = get_data_from_file(file1_path)
+    file2 = get_data_from_file(file2_path)
+    keys = sorted(set(file1.keys()).union(file2.keys()))
+    elem = [f'gendiff {file1_path} {file2_path}', '{']
     
     for key in keys:
-        value1 = fail1.get(key)
-        value2 = fail2.get(key)
+        value1 = file1.get(key)
+        value2 = file2.get(key)
     
         if value1 == value2:
             elem.append(f'    {key}: {value1}')
