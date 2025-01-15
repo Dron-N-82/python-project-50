@@ -8,10 +8,6 @@ dependencies = [
     "pytest-cov>=6.0.0",
   ]
   
-packages = [
-  { include = "gendiff" },
-  ]
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

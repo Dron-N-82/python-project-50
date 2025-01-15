@@ -88,25 +88,25 @@ name = "hexlet-code"
 version = "0.1.1"
 source = { editable = "." }
 dependencies = [
-    { name = "pytest" },
     { name = "pytest-cov" },
-    { name = "pyyaml" },
 ]
 
 [package.dev-dependencies]
 dev = [
+    { name = "pytest" },
+    { name = "pyyaml" },
     { name = "ruff" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "pytest", specifier = ">=8.3.4" },
-    { name = "pytest-cov", specifier = ">=6.0.0" },
-    { name = "pyyaml", specifier = ">=6.0.2" },
-]
+requires-dist = [{ name = "pytest-cov", specifier = ">=6.0.0" }]
 
 [package.metadata.requires-dev]
-dev = [{ name = "ruff", specifier = ">=0.9.1" }]
+dev = [
+    { name = "pytest", specifier = ">=8.3.4" },
+    { name = "pyyaml", specifier = ">=6.0.2" },
+    { name = "ruff", specifier = ">=0.9.1" },
+]
 
 [[package]]
 name = "iniconfig"
