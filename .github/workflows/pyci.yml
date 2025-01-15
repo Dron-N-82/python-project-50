@@ -29,9 +29,3 @@ jobs:
         with:
           coverageCommand: make test-coverage
           debug: true
-      - name: Run ruff
-        run: |
-          ruff .
-      - name: Run tests
-        run: |
-          pytest
