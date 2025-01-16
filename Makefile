@@ -20,7 +20,7 @@ test-coverage:
 	uv run pytest --cov=gendiff --cov-report xml 
 
 selfcheck:
-	poetry check
+	uv check
 
 check:
 	test lint
