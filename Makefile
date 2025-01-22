@@ -26,6 +26,6 @@ check:
 	test lint
 
 reinstall:
-	pip install --user --force-reinstall dist/*.whl
+	uv pip install --user --force-reinstall dist/*.whl
 
 .PHONY: install test lint selfcheck check build
