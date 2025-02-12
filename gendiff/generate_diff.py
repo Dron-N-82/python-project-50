@@ -30,13 +30,15 @@ def get_data_from_file(file):
     _, ext = os.path.splitext(file)
     if ext == '.json':
         return p_f.parse_json(file)
-    if ext == 'yml' or 'yaml':
+    elif ext == 'yml' or 'yaml':
         return p_f.parse_yaml(file)
+    else:
+        None
 
 def generate_diff(file1_path, file2_path):
     file1 = get_data_from_file(file1_path)
     file2 = get_data_from_file(file2_path)
-    keys = sorted(set(file1.keys()).union(file2.keys()))
+    keys = sorted(set(file1.keys()) | file2.keys())
     elem = [f'gendiff {file1_path} {file2_path}', '{']
     
     for key in keys:
