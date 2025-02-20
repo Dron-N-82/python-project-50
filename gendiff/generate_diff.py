@@ -1,8 +1,8 @@
 #!usr/bin/env python3
 import argparse
-# import json
-import gendiff.parse_scripts.parse_file as p_f
-import os
+import gendiff.diff_nested_dicts as diff_nested
+import gendiff.parse_file as p_f
+from gendiff.formatting import formating_diff
 
 def parse_argumet():
     # Создаем парсер аргументов
@@ -19,49 +19,13 @@ def parse_argumet():
     return {
         'first_file': args.first_file,
         'second_file': args.second_file,
+        '-f, --format':  args.format
         }
-
-
-# Читаем и получаем данные из *.json файла
-def get_data_from_file(file):
-#    with open(file_json, 'r') as handle_file:
-#        data = json.load(handle_file)
-#    return data
-    _, ext = os.path.splitext(file)
-    if ext == '.json':
-        return p_f.parse_json(file)
-    elif ext == 'yml' or 'yaml':
-        return p_f.parse_yaml(file)
-    else:
-        None
-
-def generate_diff(file1_path, file2_path):
-    file1 = get_data_from_file(file1_path)
-    file2 = get_data_from_file(file2_path)
-    keys = sorted(set(file1.keys()) | file2.keys())
-    elem = [f'gendiff {file1_path} {file2_path}', '{']
-    
-    for key in keys:
-        value1 = file1.get(key)
-        value2 = file2.get(key)
-    
-        if value1 == value2:
-            elem.append(f'    {key}: {value1}')
-
-        if value1 != value2:
-            if value1 is not None:
-                elem.append(f'  - {key}: {value1}')  # Значение из первого файла
-            if value2 is not None:
-                elem.append(f'  + {key}: {value2}')  # Значение из второго файла
-
-    elem.append('}')
-    return '\n'.join(elem)
-
 
 def maindiff():
     arg_data = parse_argumet()
-    result = generate_diff(
-        arg_data['first_file'],
-        arg_data['second_file'],
+    result = diff_nested.generate_diff(
+        p_f.get_data_from_file(arg_data['first_file']),
+        p_f.get_data_from_file(arg_data['second_file']),
         )
-    print(result)
+    print(formating_diff(result, format="stylish"))
