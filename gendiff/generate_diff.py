@@ -1,31 +1,33 @@
 #!usr/bin/env python3
-import argparse
-import gendiff.diff_nested_dicts as diff_nested
+#import argparse
+import gendiff.build_diff as diff_nested
 import gendiff.parse_file as p_f
 from gendiff.formatting import formating_diff
+import gendiff.cli as cli
 
-def parse_argumet():
-    # Создаем парсер аргументов
-    parser = argparse.ArgumentParser(
-        description='Compares two configuration files and shows a difference.',
-        epilog='set format of output')
-    # Добавляем аргументы
-    parser.add_argument('first_file', help='First file to compare.')
-    parser.add_argument('second_file', help='Second file to compare.')
-    parser.add_argument('-f', '--format')
-    # Обрабатываем аргументы
-    args = parser.parse_args()
+# def parse_argumet():
+#     # Создаем парсер аргументов
+#     parser = argparse.ArgumentParser(
+#         description='Compares two configuration files and shows a difference.',
+#         epilog='set format of output')
+#     # Добавляем аргументы
+#     parser.add_argument('first_file', help='First file to compare.')
+#     parser.add_argument('second_file', help='Second file to compare.')
+#     parser.add_argument('-f', '--format')
+#     # Обрабатываем аргументы
+#     args = parser.parse_args()
 
-    return {
-        'first_file': args.first_file,
-        'second_file': args.second_file,
-        '-f, --format':  args.format
-        }
+#     return {
+#         'first_file': args.first_file,
+#         'second_file': args.second_file,
+#         '-f, --format':  args.format
+#         }
 
-def maindiff():
-    arg_data = parse_argumet()
-    result = diff_nested.generate_diff(
-        p_f.get_data_from_file(arg_data['first_file']),
-        p_f.get_data_from_file(arg_data['second_file']),
-        )
-    print(formating_diff(result, format="stylish"))
+def generate_diff(file1_path, file2_path, style='stylish'):
+    #arg_data = cli.parse_argumet()
+    data1 = p_f.get_data_from_file(file1_path)
+    data2 = p_f.get_data_from_file(file2_path)
+    diff = diff_nested.generate_diff(data1, data2)
+    result = formating_diff(diff, style)
+    return result
+    #print(f'gendiff {file1_path} {file2_path}\n{formating_diff(result, format="stylish")}')

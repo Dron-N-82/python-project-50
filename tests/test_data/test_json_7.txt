@@ -1,4 +1,4 @@
-gendiff filepath1.json filepath2.json
+gendiff tests/test_data/file1_7.json tests/test_data/file2_7.json
 {
     common: {
       + follow: false
