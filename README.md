@@ -13,3 +13,6 @@
  [![asciicast](https://asciinema.org/a/hk9pZ2YFHrjrroxnuN800BHAh.svg)](https://asciinema.org/a/hk9pZ2YFHrjrroxnuN800BHAh)
  ### YAML
  [![asciicast](https://asciinema.org/a/M90nRoXHCRYx5NZh00zeJCPTY.svg)](https://asciinema.org/a/M90nRoXHCRYx5NZh00zeJCPTY)
+
+### DEMONSTRATION STEP7
+ [![asciicast](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3.svg)](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3)
