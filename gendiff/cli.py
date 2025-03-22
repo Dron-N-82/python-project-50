@@ -8,7 +8,12 @@ def parse_argumet():
     # Добавляем аргументы
     parser.add_argument('first_file', help='First file to compare.')
     parser.add_argument('second_file', help='Second file to compare.')
-    parser.add_argument('-f', '--format')
+    parser.add_argument('-f', '--format',
+                        help="set format of output",
+                        metavar="FORMAT",
+                        default="stylish",
+                        choices=["stylish", "plain", "json"],
+                        )
     # Обрабатываем аргументы
     args = parser.parse_args()
 

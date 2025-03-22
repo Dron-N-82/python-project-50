@@ -16,3 +16,6 @@
 
 ### DEMONSTRATION STEP7
  [![asciicast](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3.svg)](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3)
+
+### DEMONSTRATION STEP8
+ [![asciicast](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3.svg)](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3)

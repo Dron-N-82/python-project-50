@@ -9,7 +9,7 @@ def main():
     file2_path = args['second_file']
     format = args['-f, --format']
     diff = generate_diff(file1_path, file2_path, format)
-    print(f'gendiff {file1_path} {file2_path}\n{diff}')
+    print(diff)
 
 if __name__ == '__main__':
     main()
