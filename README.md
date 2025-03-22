@@ -18,4 +18,4 @@
  [![asciicast](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3.svg)](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3)
 
 ### DEMONSTRATION STEP8
- [![asciicast](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3.svg)](https://asciinema.org/a/lPiQ010MnhDoWEZZv7vjkygG3)
+ [![asciicast](https://asciinema.org/a/1wxe4tvdupVcdB034sf76zmOz.svg)](https://asciinema.org/a/1wxe4tvdupVcdB034sf76zmOz)
