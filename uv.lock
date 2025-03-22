@@ -85,7 +85,7 @@ wheels = [
 
 [[package]]
 name = "hexlet-code"
-version = "0.1.1"
+version = "0.1.8"
 source = { editable = "." }
 dependencies = [
     { name = "pytest-cov" },

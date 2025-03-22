@@ -10,7 +10,7 @@ def format_value(value):
     return str(value)
 
 
-def convert_plain(diff, path=''):
+def convert_to_plain(diff, path=''):
     message = []
     for item in diff:
         full_path = f"{path}.{item}" if path else item
@@ -18,7 +18,7 @@ def convert_plain(diff, path=''):
 
         if status == 'nested':
             child = diff[item]['child']
-            message.extend(convert_plain(child, full_path))
+            message.extend(convert_to_plain(child, full_path))
         elif status == 'added':
             new_value = format_value(diff[item]['new_value'])
             line = (
@@ -40,6 +40,6 @@ def convert_plain(diff, path=''):
 
     return (message)
 
-def convert_to_plain(diff):
-    messages = convert_plain(diff)
+def convert_plain(diff):
+    messages = convert_to_plain(diff)
     return "\n".join(messages)
