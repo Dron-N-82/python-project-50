@@ -56,7 +56,7 @@ def convert_stylish(value, replacer=' ', spaces_count=4):
             elif nodetype == 'changed':
                 old = format_value(current_dict[k]['value']['old_value'], deep_indent)
                 new = format_value(current_dict[k]['value']['new_value'], deep_indent)
-                lines.append(f'{deep_indent[:-2]}- {k}: {old}'.rstrip())
+                lines.append(f'{deep_indent[:-2]}- {k}: {old}')
                 lines.append(f'{deep_indent[:-2]}+ {k}: {new}')
             elif nodetype == 'unchanged':
                 value = current_dict[k]['value']
