@@ -25,22 +25,22 @@ def test_gennerate_diff_yaml_in_style_stylish():
     )
 
 
-# def test_gennerate_diff_json_in_style_plain():
-#     run_test(
-#         'tests/test_data/test_plain_8.txt',
-#         'tests/test_data/file1_7.json',
-#         'tests/test_data/file2_7.json',
-#         'plain'
-#     )
+def test_gennerate_diff_json_in_style_plain():
+    run_test(
+        'tests/test_data/test_plain_8.txt',
+        'tests/test_data/file1_7.json',
+        'tests/test_data/file2_7.json',
+        'plain'
+    )
 
 
-# def test_gennerate_diff_yaml_in_style_plain():
-#     run_test(
-#         'tests/test_data/test_plain_8.txt',
-#         'tests/test_data/file1_7.yaml',
-#         'tests/test_data/file2_7.yaml',
-#         'plain'
-#     )
+def test_gennerate_diff_yaml_in_style_plain():
+    run_test(
+        'tests/test_data/test_plain_8.txt',
+        'tests/test_data/file1_7.yaml',
+        'tests/test_data/file2_7.yaml',
+        'plain'
+    )
 
     
 def test_gennerate_diff_json_in_style_json():
