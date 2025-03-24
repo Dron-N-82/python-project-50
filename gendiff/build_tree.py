@@ -1,4 +1,4 @@
-def generate_diff(dict1_, dict2_):
+def build_diff(dict1_, dict2_):
 
     res = {}
     keys = sorted(set(dict1_.keys()) | set(dict2_.keys()))
@@ -14,7 +14,7 @@ def generate_diff(dict1_, dict2_):
         elif value1 == value2:
             res[key] = {"type": "unchanged", "value": value1}
         elif isinstance(value1, dict) and isinstance(value2, dict):
-                nested_diff = generate_diff(value1, value2)
+                nested_diff = build_diff(value1, value2)
                 res[key] = {"type": "nested", "child": nested_diff}
         else:
             res[key] = {"type": "changed", "value": {"old_value": value1, 'new_value': value2}}

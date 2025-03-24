@@ -3,7 +3,6 @@ import json
 import yaml
 
 
-
 def parse_data(file_path, extension):
     with open(file_path, 'r') as handle_file:
         if extension == '.json':
