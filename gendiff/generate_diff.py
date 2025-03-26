@@ -1,6 +1,6 @@
 #!usr/bin/env python3
-from gendiff.build_tree import build_diff
 import gendiff.parse_file as p_f
+from gendiff.build_tree import build_diff
 from gendiff.formatting import formating_diff
 
 

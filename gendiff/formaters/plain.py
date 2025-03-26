@@ -40,6 +40,7 @@ def convert_to_plain(diff, path=''):
 
     return (message)
 
+
 def convert_plain(diff):
     messages = convert_to_plain(diff)
     return "\n".join(messages)

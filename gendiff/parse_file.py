@@ -1,5 +1,6 @@
-import os
 import json
+import os
+
 import yaml
 
 
@@ -12,7 +13,7 @@ def parse_data(file_path, extension):
         else:
             None
 
-# Читаем и получаем данные из файла
+
 def get_data_from_file(file):
     _, ext = os.path.splitext(file)
     return parse_data(file, ext)

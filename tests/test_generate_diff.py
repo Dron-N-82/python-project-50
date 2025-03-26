@@ -1,7 +1,8 @@
 from gendiff.generate_diff import generate_diff
 
+
 def run_test(comparison, file1, file2, style):
-    with open(comparison,'r') as txt:
+    with open(comparison, 'r') as txt:
         text = ''.join(txt.readlines())
     gd_text = generate_diff(file1, file2, style)
     assert gd_text == text

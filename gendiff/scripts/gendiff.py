@@ -11,5 +11,6 @@ def main():
     diff = generate_diff(file1_path, file2_path, format)
     print(diff)
 
+
 if __name__ == '__main__':
     main()

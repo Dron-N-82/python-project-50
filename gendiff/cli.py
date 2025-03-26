@@ -1,5 +1,6 @@
 import argparse
 
+
 def parse_argumet():
     # Создаем парсер аргументов
     parser = argparse.ArgumentParser(
