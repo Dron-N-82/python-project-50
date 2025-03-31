@@ -48,8 +48,6 @@ def run_test(diff):
         ),
     ],
 )
-
-
 def test_generate_diff(diff, file1, file2, style):
     diff_text = generate_diff(file1, file2, style)
     test_data = run_test(diff)
